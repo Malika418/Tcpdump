@@ -35,12 +35,12 @@ First, identify the available network interfaces on the system.
 
 ```bash
 sudo ifconfig
-Step 2: List Available Interfaces for TCPdump
 
+Step 2: List Available Interfaces for TCPdump
 Use TCPdump to list all interfaces it can capture traffic from.
 sudo tcpdump -D
-Step 3: Capture Live Traffic on an Interface
 
+Step 3: Capture Live Traffic on an Interface
 Capture 5 packets on the eth0 interface with verbose output.
 sudo tcpdump -i eth0 -v -c5
 tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
@@ -50,22 +50,22 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 262144 byt
 Flags [P.], cksum 0x5851 (incorrect > 0x30d3), seq 1080713945:1080714027, 
 ack 62760789, win 501, options [nop,nop,TS val 1017464119 ecr 3001513453], length 82
 sudo tcpdump -i eth0 -nn -c9 port 80 -w capture.pcap &
+
 Step 4: Capture HTTP Traffic and Save to a File
-
 Capture 9 packets on port 80 (HTTP traffic) and write them to a file named capture.pcap.
-Step 5: Generate Traffic
 
+Step 5: Generate Traffic
 Use curl to generate HTTP traffic.
 curl opensource.google.com
-Step 6: Verify the Capture File
 
+Step 6: Verify the Capture File
 Confirm that the capture file was created.
 ls -l capture.pcap
-Step 7: Read the Capture File (Verbose Output)
 
+Step 7: Read the Capture File (Verbose Output)
 Analyze the captured packets with verbose details.
 sudo tcpdump -nn -r capture.pcap -v
-Step 8: Analyze Packets in Hex and ASCII Format
 
+Step 8: Analyze Packets in Hex and ASCII Format
 View packet contents in both hexadecimal and ASCII formats.
 sudo tcpdump -nn -r capture.pcap -X
