@@ -36,6 +36,10 @@ First, identify the available network interfaces on the system.
 ```bash
 sudo ifconfig
 
+<img width="803" height="542" alt="1" src="https://github.com/user-attachments/assets/99975267-fc25-48dd-88eb-8d7c463815cb" />
+
+
+
 Step 2: List Available Interfaces for TCPdump
 Use TCPdump to list all interfaces it can capture traffic from.
 sudo tcpdump -D
